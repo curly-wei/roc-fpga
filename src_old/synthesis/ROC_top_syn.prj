@@ -1,0 +1,14 @@
+#add_file options
+add_file -vhdl "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/smartgen/in_lvds/in_lvds.vhd"
+add_file -vhdl "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/smartgen/roc_dcm/roc_dcm.vhd"
+add_file -vhdl "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/component/work/roc_block/roc_block_syn.vhd"
+add_file -vhdl "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/hdl/ROC_top.vhd"
+add_file -constraint "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/constraint/ROC_top.sdc"
+set_option -top_module work.ROC_top
+
+#device options
+set_option -technology ProASIC3E
+set_option -part A3PE3000
+
+impl -active "synthesis"
+project -result_file "C:/FVTX_VHDL_code/ROC_main_FPGA_B_D/synthesis/ROC_top.edn"
